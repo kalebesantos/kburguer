@@ -1,43 +1,59 @@
 # 🍔 K-Burguer – Sistema de Pedidos para Hamburgueria
 
-K-Burguer é um projeto de **sistema completo para hamburgueria**, desenvolvido com **Next.js 13 (App Router)**, **React** e **Tailwind CSS**.  
-Permite que clientes visualizem o cardápio, adicionem produtos ao carrinho, finalizem pedidos, e que a equipe da cozinha/admin gerencie os pedidos em tempo real.
+K-Burguer é um projeto de **sistema para hamburgueria**, desenvolvido com **Next.js 13 (App Router)**, **React** e **Tailwind CSS**.  
+O objetivo é simular um sistema real de pedidos, desde o cardápio do cliente até o painel administrativo da cozinha.
 
 ---
 
-## **🖥 Funcionalidades**
+## 🖥 Funcionalidades
 
-### Cliente
-- Visualização do cardápio com imagens quadradas e descrições.
-- Modal de seleção de opções:
-  - Pão obrigatório (ex.: Brioche, Australiano)
-  - Extras opcionais (ex.: Bacon, Salada) com preço adicional
-- Carrinho global com **badge dinâmica** no header.
-- Checkout simples: nome, telefone, endereço (simulado).
-- Envio de pedido via API.
+### 👤 Cliente
+- Página de cardápio com:
+  - Fotos quadradas dos hambúrgueres
+  - Descrição dos ingredientes
+- Modal profissional de produto
+- Carrinho global com badge no header
+- Checkout simples
+- Envio do pedido via API
 
-### Painel Admin
-- Dashboard com estatísticas de pedidos.
-- Lista de pedidos recebidos em tempo real.
-- Atualização de status do pedido:
-  - `recebido → preparando → pronto → entregue`
-- CRUD de produtos e categorias (opcional para versão final).
-- Sidebar fixa com navegação entre páginas do painel.
+### 🧑‍🍳 Painel Admin
+- Dashboard administrativo
+- Lista de pedidos em tempo real
+- Atualização de status do pedido
+- Sidebar fixa para navegação
 
 ---
 
-## **🛠 Tecnologias Utilizadas**
-
-- **Next.js 13 (App Router)** – Frontend e backend integrado.
-- **React + Hooks** – Estado global, interatividade.
-- **Tailwind CSS** – Estilização rápida e responsiva.
-- **Context API** – Gerenciamento global do carrinho.
-- **UUID** – Identificadores únicos para pedidos e produtos.
-- **API Routes** – Endpoints de produtos e pedidos.
-- **Modal customizado** – Seleção de opções do produto.
-- **Polling / SSE (opcional)** – Atualização de pedidos em tempo real.
+## 🛠 Tecnologias
+- Next.js 13+
+- React
+- Tailwind CSS
+- Context API
+- UUID
+- API Routes
 
 ---
 
-## **📁 Estrutura de Pastas**
+## 📁 Estrutura de Pastas
 
+app/
+ ├─ cardapio/
+ ├─ checkout/
+ ├─ painel/
+ ├─ context/
+ ├─ api/
+ ├─ layout.tsx
+ └─ globals.css
+
+---
+
+## ⚙️ Como rodar o projeto
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+Feito com ❤️ para aprendizado e portfólio.
