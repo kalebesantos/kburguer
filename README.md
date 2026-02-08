@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍔 K-Burguer – Sistema de Pedidos para Hamburgueria
 
-## Getting Started
+K-Burguer é um projeto de **sistema completo para hamburgueria**, desenvolvido com **Next.js 13 (App Router)**, **React** e **Tailwind CSS**.  
+Permite que clientes visualizem o cardápio, adicionem produtos ao carrinho, finalizem pedidos, e que a equipe da cozinha/admin gerencie os pedidos em tempo real.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **🖥 Funcionalidades**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Cliente
+- Visualização do cardápio com imagens quadradas e descrições.
+- Modal de seleção de opções:
+  - Pão obrigatório (ex.: Brioche, Australiano)
+  - Extras opcionais (ex.: Bacon, Salada) com preço adicional
+- Carrinho global com **badge dinâmica** no header.
+- Checkout simples: nome, telefone, endereço (simulado).
+- Envio de pedido via API.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Painel Admin
+- Dashboard com estatísticas de pedidos.
+- Lista de pedidos recebidos em tempo real.
+- Atualização de status do pedido:
+  - `recebido → preparando → pronto → entregue`
+- CRUD de produtos e categorias (opcional para versão final).
+- Sidebar fixa com navegação entre páginas do painel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## **🛠 Tecnologias Utilizadas**
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 13 (App Router)** – Frontend e backend integrado.
+- **React + Hooks** – Estado global, interatividade.
+- **Tailwind CSS** – Estilização rápida e responsiva.
+- **Context API** – Gerenciamento global do carrinho.
+- **UUID** – Identificadores únicos para pedidos e produtos.
+- **API Routes** – Endpoints de produtos e pedidos.
+- **Modal customizado** – Seleção de opções do produto.
+- **Polling / SSE (opcional)** – Atualização de pedidos em tempo real.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## **📁 Estrutura de Pastas**
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
