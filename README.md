@@ -1,9 +1,7 @@
 # 🍔 K-Burguer – Sistema de Pedidos para Hamburgueria
 
-K-Burguer é um projeto de **sistema completo para hamburgueria**, desenvolvido com **Next.js 13 (App Router)**, **React** e **Tailwind CSS**.  
+K-Burguer é um projeto de **sistema para hamburgueria**, desenvolvido com **Next.js 13 (App Router)**, **React** e **Tailwind CSS**.  
 O objetivo é simular um sistema real de pedidos, desde o cardápio do cliente até o painel administrativo da cozinha.
-
-Projeto ideal para **portfólio fullstack**, demonstrando frontend moderno, backend com API própria e organização profissional.
 
 ---
 
