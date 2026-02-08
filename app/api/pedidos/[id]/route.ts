@@ -1,27 +1,36 @@
 import { NextResponse } from "next/server";
-import { pedidos } from "../storage";
+import { pedidos } from "../_db";
+import { Pedido } from "../types";
 
-/* =========================
-   PATCH /api/pedidos/:id
-========================= */
+// PATCH → atualizar status do pedido
 export async function PATCH(
   request: Request,
   context: { params: Promise<{ id: string }> }
 ) {
-  const { id } = await context.params;
-  const body = await request.json();
-  const { status } = body;
+  try {
+    const { id } = await context.params;
+    const body = await request.json();
 
-  const pedido = pedidos.find(p => p.id === id);
+    const pedido: Pedido | undefined = pedidos.find(
+      (p) => p.id === id
+    );
 
-  if (!pedido) {
+    if (!pedido) {
+      return NextResponse.json(
+        { error: "Pedido não encontrado" },
+        { status: 404 }
+      );
+    }
+
+    if (body.status) {
+      pedido.status = body.status;
+    }
+
+    return NextResponse.json(pedido);
+  } catch (error) {
     return NextResponse.json(
-      { error: "Pedido não encontrado" },
-      { status: 404 }
+      { error: "Erro ao atualizar pedido" },
+      { status: 500 }
     );
   }
-
-  pedido.status = status;
-
-  return NextResponse.json(pedido);
 }

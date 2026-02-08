@@ -1,30 +1,34 @@
 import { NextResponse } from "next/server";
-import { randomUUID } from "crypto";
-import { pedidos, Pedido } from "./storage";
+import { v4 as uuid } from "uuid";
+import { pedidos } from "./_db";
+import { Pedido } from "./types";
 
-/* =========================
-   GET /api/pedidos
-========================= */
+// GET → listar pedidos
 export async function GET() {
   return NextResponse.json(pedidos);
 }
 
-/* =========================
-   POST /api/pedidos
-========================= */
-export async function POST(req: Request) {
-  const body = await req.json();
+// POST → criar pedido
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
 
-  const novoPedido: Pedido = {
-    id: randomUUID(),
-    cliente: body.cliente,
-    itens: body.itens,
-    total: body.total,
-    status: "recebido",
-    criadoEm: new Date().toISOString(),
-  };
+    const novoPedido: Pedido = {
+      id: uuid(),
+      cliente: body.cliente,
+      itens: body.itens,
+      total: body.total,
+      status: "recebido",
+      criadoEm: new Date().toISOString(),
+    };
 
-  pedidos.push(novoPedido);
+    pedidos.unshift(novoPedido); // mais recente primeiro
 
-  return NextResponse.json(novoPedido, { status: 201 });
+    return NextResponse.json(novoPedido, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Erro ao criar pedido" },
+      { status: 500 }
+    );
+  }
 }
