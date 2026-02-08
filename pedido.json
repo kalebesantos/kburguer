@@ -1,0 +1,7 @@
+{
+  "cliente": "Kalebe",
+  "itens": [
+    { "nome": "Burger Bacon", "qtd": 1 }
+  ],
+  "total": 29.90
+}
