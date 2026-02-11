@@ -18,6 +18,7 @@ type Adicional = {
 };
 
 const paes = [
+  { nome: "Pão Caseiro", preco: 0 },
   { nome: "Pão Brioche", preco: 0 },
   { nome: "Pão Australiano", preco: 2 },
 ];
@@ -26,6 +27,8 @@ const adicionais: Adicional[] = [
   { nome: "Bacon", preco: 3 },
   { nome: "Queijo extra", preco: 2 },
   { nome: "Salada", preco: 1.5 },
+  { nome: "Barbecue", preco: 5 },
+  { nome: "Catupiry", preco: 8 },
 ];
 
 export default function CardapioPage() {
